@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../srevices/authServices";
 import loginSvg from "../assets/login.svg";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { AuthContext } from "../context/authContext";
 
 const LoginPage = () => {
@@ -27,7 +27,7 @@ const LoginPage = () => {
   };
 
   return (
-    <motion.div
+    <Motion.div
       initial={{ opacity: 0, x: 100 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -100 }}
@@ -77,7 +77,7 @@ const LoginPage = () => {
           />
         </div>
       </div>
-    </motion.div>
+    </Motion.div>
   );
 };
 

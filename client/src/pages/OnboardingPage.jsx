@@ -3,7 +3,7 @@ import axios from "axios";
 import { AuthContext } from "../context/authContext";
 import { useNavigate } from "react-router-dom";
 import onBoardingSvg from "../assets/onboard.svg";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 
 const Onboarding = () => {
   const [username, setUsername] = useState("");
@@ -12,7 +12,7 @@ const Onboarding = () => {
   const [profileImage, setProfileImage] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
   const [error, setError] = useState("");
-  const { user, setUser } = useContext(AuthContext);
+  const { setUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleOnboard = async (e) => {
@@ -73,7 +73,7 @@ const Onboarding = () => {
   };
 
   return (
-    <motion.div
+    <Motion.div
       initial={{ opacity: 0, x: 100 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -100 }}
@@ -142,7 +142,7 @@ const Onboarding = () => {
           />
         </div>
       </div>
-    </motion.div>
+    </Motion.div>
   );
 };
 

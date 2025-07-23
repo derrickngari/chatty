@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { register } from "../srevices/authServices";
 import registerSvg from "../assets/register.svg";
 import { AuthContext } from "../context/authContext";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 
 const RegisterPage = () => {
   const [email, setEmail] = useState("");
@@ -26,7 +26,7 @@ const RegisterPage = () => {
   };
 
   return (
-    <motion.div
+    <Motion.div
       initial={{ opacity: 0, x: 100 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -100 }}
@@ -83,7 +83,7 @@ const RegisterPage = () => {
           />
         </div>
       </div>
-    </motion.div>
+    </Motion.div>
   );
 };
 

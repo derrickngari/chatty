@@ -1,5 +1,4 @@
 const jwt =  require('jsonwebtoken');
-const cookie = require('cookie')
 const Chat = require('../models/Chat.js');
 
 const onlineUsers = new Map();

@@ -1,7 +1,7 @@
-import express from "express";
-import { register, login, logout, onboard, getAllUsersExceptCurrent } from "../controllers/authControllers.js";
-import authMiddleware from "../middlewares/authMiddleware.js";
-import User from "../models/User.js";
+const express = require("express");
+const { register, login, logout, onboard, getAllUsersExceptCurrent } = require("../controllers/authControllers");
+const authMiddleware = require("../middlewares/authMiddleware");
+const User = require("../models/User");
 
 const router = express.Router();
 
@@ -23,4 +23,4 @@ router.get('/me', authMiddleware, async (req, res) => {
 
 router.get('/users', authMiddleware, getAllUsersExceptCurrent);
 
-export default  router;
+module.exports = router;

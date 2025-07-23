@@ -1,6 +1,6 @@
-import jwt from 'jsonwebtoken';
-import cookie from 'cookie'
-import Chat from '../models/Chat.js';
+const jwt =  require('jsonwebtoken');
+const cookie = require('cookie')
+const Chat = require('../models/Chat.js');
 
 const onlineUsers = new Map();
 

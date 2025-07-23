@@ -1,14 +1,14 @@
-import express from 'express';
-import cors from "cors";
-import http from "http";
-import { Server } from "socket.io";
-import 'dotenv/config';
-import cookieParser from 'cookie-parser'
+const express = require('express');
+const cors = require("cors");
+const http = require("http");
+const { Server } = require("socket.io");
+require('dotenv').config();
+const cookieParser = require('cookie-parser');
 
-import { registerSocketHandlers } from './socket/socket.js';
-import authRoutes from './routes/authRoutes.js';
-import chattRoutes from './routes/chatRoutes.js';
-import dbConfig from './config/dbConfig.js';
+const { registerSocketHandlers } = require('./socket/socket');
+const authRoutes = require('./routes/authRoutes');
+const chattRoutes = require('./routes/chatRoutes');
+const dbConfig = require('./config/dbConfig');
 
 const app = express();
 const server = http.createServer(app);

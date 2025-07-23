@@ -1,6 +1,6 @@
-import User from '../models/User.js'
-import jwt from 'jsonwebtoken'
-import cloudinary from '../config/uploads.js'
+const User = require('../models/User.js')
+const jwt = require('jsonwebtoken')
+const cloudinary = require('../config/uploads.js')
 
 export const register = async (req, res) => {
     try {

@@ -1,7 +1,14 @@
-import express from "express";
+const express = require("express");
 const router = express.Router();
-import authMiddleware from "../middlewares/authMiddleware.js";
-import { getUserChats, getMessages, createNewChat, createNewGroup, sendMessage, getOrCreateChat } from "../controllers/chatControllers.js";
+const authMiddleware = require("../middlewares/authMiddleware");
+const {
+  getUserChats,
+  getMessages,
+  createNewChat,
+  createNewGroup,
+  sendMessage,
+  getOrCreateChat,
+} = require("../controllers/chatControllers");
 
 router.get('/user-chats', authMiddleware, getUserChats);
 router.get('/:chatId/messages', authMiddleware, getMessages);
@@ -10,4 +17,4 @@ router.post('/', authMiddleware, createNewChat);
 router.post('/new-group', authMiddleware, createNewGroup);
 router.get('/direct/:userId', authMiddleware, getOrCreateChat);
 
-export default router;
+module.exports = router;

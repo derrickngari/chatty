@@ -1,9 +1,10 @@
 import { useState, useContext } from "react";
 import axios from "axios";
-import { AuthContext } from "../context/authContext"; // Import your Auth Context
+import { AuthContext } from "../context/authContext";
 import { useNavigate } from "react-router-dom";
 import onBoardingSvg from "../assets/onboard.svg";
 import { motion } from "framer-motion";
+import axios from "axios";
 
 const Onboarding = () => {
   const [username, setUsername] = useState("");
@@ -39,7 +40,7 @@ const Onboarding = () => {
   const submitOnboarding = async (base64Image) => {
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/onboarding",
+        `${import.meta.env.VITE_SERVER_URL}/api/auth/onboarding`,
         {
           username,
           bio,

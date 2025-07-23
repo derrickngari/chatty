@@ -66,7 +66,7 @@ const Onboarding = () => {
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        setImagePreview(reader.result);
+        setImagePreview(reader.result)
       };
       reader.readAsDataURL(file);
     }

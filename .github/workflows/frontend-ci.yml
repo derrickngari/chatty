@@ -1,0 +1,14 @@
+name: Frontend CI
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - run: cd client && npm ci
+      - run: cd client && npm run lint
+      - run: cd client && npm test
+      - run: cd client && npm run build

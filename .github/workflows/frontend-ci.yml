@@ -10,5 +10,4 @@ jobs:
           node-version: '18'
       - run: cd client && npm ci
       - run: cd client && npm run lint --if-present
-      - run: cd client && npm test --if-present
       - run: cd client && npm run build

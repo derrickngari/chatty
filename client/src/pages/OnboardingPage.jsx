@@ -4,7 +4,6 @@ import { AuthContext } from "../context/authContext";
 import { useNavigate } from "react-router-dom";
 import onBoardingSvg from "../assets/onboard.svg";
 import { motion } from "framer-motion";
-import axios from "axios";
 
 const Onboarding = () => {
   const [username, setUsername] = useState("");

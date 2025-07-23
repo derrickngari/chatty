@@ -13,6 +13,7 @@ export const AuthProvider = ({ children }) => {
             const res = await axios.get(`${SERVER_URL}/api/auth/me`, { withCredentials: true });
             setUser(res.data);
         } catch (err) {
+            console.log(err);
             setUser(null);
         } finally {
             setLoading(false);

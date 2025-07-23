@@ -1,7 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { EllipsisVerticalIcon, MagnifyingGlassIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import socket from "../socket/socket";
+
 const MobileChatList = ({ chats, onSelectChat, user, onlineUsers = [], users = [], groups = [], onUserClick }) => {
   const [chatList, setChatList] = useState(chats);
   const [search, setSearch] = useState("");
